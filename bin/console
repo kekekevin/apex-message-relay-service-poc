@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require_relative '../config/environment'
+require 'dotenv'
+Dotenv.load
+
+require 'pry'
+Pry.start
