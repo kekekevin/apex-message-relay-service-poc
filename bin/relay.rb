@@ -43,7 +43,6 @@ Async do
 
 end
 internet = Async::HTTP::Internet.new
-headers = { 'Authorization' => 'eyJjdHkiOiJ0ZXh0XC9wbGFpbiIsImFsZyI6IkVTNTEyIn0.eyJ1c2VyX2VudGl0eSI6ImNvcnJlc3BvbmRlbnQudHd0dCIsInN1YiI6ImFwZXhfYXBpIiwiYXVkIjpbImFwZXhjbGVhcmluZy5sb2NhbCJdLCJ1c2VyX2lwIjoiMjA3LjIyOS4xNTMuMjI2IiwibmJmIjoxNzA5MzMyNTcwLCJpc3MiOiJhcGV4Y2xlYXJpbmcubG9jYWwiLCJ1c2VyX2NsYXNzIjoiQ0xJRU5UX0NSRURFTlRJQUxTX1VTRVIiLCJleHAiOjE3MDk0MjI4NzAsImlhdCI6MTcwOTMzMjg3MCwianRpIjoiYzlkMjE0YmQtNTRlMi00ZTNmLWJmNWMtOWQ3MmM4ZGJiNTNlIn0.ATj-sFCTlJnyTkwgOwwtDuq_MMfGyJ14bzGdVqfio19rGNrB5z24oN-b6SL4xcMUlMP6wrOGxlfnaulMFy2H3QieAU_EDDNA5pzFEE7bi8smsfqNi6hq9_9Rsrvhhy-vF15uXw4hNCWmYZAVIp2DU9YGCuOTO2XQdURqChXfmhL6I7wC', 'Content-Type' => 'application/json' }
 
 def fetch_topic
   internet = Async::HTTP::Internet.new
@@ -51,7 +50,7 @@ def fetch_topic
   Async do
     loop do
       p 'run foo'
-      p internet.get('https://uat-api.apexclearing.com/ale/api/v1/read/sentinel2-batch/TWTT?limit=1000&highWaterMark=148856092&sinceDateTime=2023-01-13&streamType=LONG_POLL&timeoutSeconds=10', headers).read
+      p internet.get('https://uat-api.apexclearing.com/ale/api/v1/read/sentinel2-batch/TWTT?limit=1000&highWaterMark=149399444&sinceDateTime=2023-01-13&streamType=LONG_POLL&timeoutSeconds=10', headers).read
       p 'foo'
       sleep 1
     end
@@ -64,7 +63,7 @@ def fetch_other_topic
   Async do
     loop do
       p 'run bar'
-      p internet.get('https://uat-api.apexclearing.com/ale/api/v1/read/sentinel2-batch/TWTT?limit=1000&highWaterMark=148856092&sinceDateTime=2023-01-13&streamType=LONG_POLL&timeoutSeconds=5', headers).read
+      p internet.get('https://uat-api.apexclearing.com/ale/api/v1/read/sentinel2-batch/TWTT?limit=1000&highWaterMark=149399444&sinceDateTime=2023-01-13&streamType=LONG_POLL&timeoutSeconds=5', headers).read
       p 'bar'
       sleep 1
     end
